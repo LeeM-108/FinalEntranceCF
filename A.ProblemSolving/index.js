@@ -18,15 +18,18 @@ for (let j = 0; j < arr2.length; j++) {
 }
 console.log(arr1, arr2);
 
-function sort(arr) {
+function sort(arr1, arr2) {
     var newArr = []
-    for (var i = 0; i < arr.length; i++) {
-      if (newArr.indexOf(arr[i]) === -1) {
-        newArr.push(arr[i])
+    for (var i = 0; i < arr1.length; i++) {
+      if (arr2.indexOf(arr1[i]) > -1) {
+        arr2.splice(arr2.indexOf(arr1[i]), 1);
+        arr1.splice(arr1.indexOf(arr1[i]), 1);
       }
     }
-    return newArr
+    return arr1, arr2
   }
+
+sort(arr1, arr2);
 
 for (let i = 0; i < arr1.length; i++) {
     const value = arr1[i];
@@ -46,7 +49,7 @@ for (let i = 0; i < arr1.length; i++) {
         }   
     }
 }
-console.log(sort(resultArray));
+console.log(resultArray);
 
 
 
